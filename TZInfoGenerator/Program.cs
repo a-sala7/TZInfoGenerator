@@ -41,7 +41,7 @@ namespace TZInfoGenerator
             {
                 s.Write(JsonConvert.SerializeObject(zones, Formatting.Indented));
             }
-            using (StreamWriter s = new StreamWriter(desktop + "/uniquezones.json"))
+            using (StreamWriter s = new StreamWriter(desktop + "/uniquezones.txt"))
             {
                 foreach (var zone in uniqueZones)
                 {
