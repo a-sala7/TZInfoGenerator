@@ -13,10 +13,10 @@ namespace TZInfoGenerator
         static void Main(string[] args)
         {
             var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            var countries = TZNames.GetCountryNames("en").Where(c => c.Key != "UN").Select(c => new
+            var countries = TZNames.GetCountryNames("en").Where(c => c.Key != "UN" && c.Key != "IL").Select(c => new
             {
                 Code = c.Key,
-                Name = c.Value
+                Name = (c.Key == "PS") ? "Palestine" : c.Value
             });
             var zones = new List<TimeZoneItem>();
             var threshold = new DateTime(2020, 1, 1);
@@ -30,6 +30,9 @@ namespace TZInfoGenerator
                 ));
                 zones.AddRange(countryZones);
             }
+            
+            var uniqueZones = zones.GroupBy(z => z.Id).Select(g => g.Key).ToList();
+            uniqueZones.Sort();
             using (StreamWriter s = new StreamWriter(desktop + "/countries.json"))
             {
                 s.Write(JsonConvert.SerializeObject(countries, Formatting.Indented));
@@ -37,6 +40,13 @@ namespace TZInfoGenerator
             using (StreamWriter s = new StreamWriter(desktop + "/zones.json"))
             {
                 s.Write(JsonConvert.SerializeObject(zones, Formatting.Indented));
+            }
+            using (StreamWriter s = new StreamWriter(desktop + "/uniquezones.json"))
+            {
+                foreach (var zone in uniqueZones)
+                {
+                    s.WriteLine(zone);
+                }
             }
         }
     }
