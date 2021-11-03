@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZInfoGenerator", "TZInfoGenerator\TZInfoGenerator.csproj", "{FA273480-75B2-427F-B01B-D5F132B7EAED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA273480-75B2-427F-B01B-D5F132B7EAED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA273480-75B2-427F-B01B-D5F132B7EAED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA273480-75B2-427F-B01B-D5F132B7EAED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA273480-75B2-427F-B01B-D5F132B7EAED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {332A27D2-9497-4403-B651-2DE514ECDEBC}
+	EndGlobalSection
+EndGlobal
